@@ -1,0 +1,21 @@
+.nav-container {
+  background-color: #18122B;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+li {
+  font-family: 'Roboto Mono', monospace;
+  list-style: none;
+  color: whitesmoke;
+  transition: 0.5s ease;
+  }
+
+li:hover {
+  color: #635985;
+  cursor: crosshair;
+}
