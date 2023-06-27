@@ -6,6 +6,9 @@ import { Component } from "@angular/core";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
+
+  portfolioTitle: string = "Roberto Jacobo's Portfolio";
+
   menuItems: MenuItem[] = [
     { name: "Home", url: "/home" },
     { name: "About", url: "/about" },

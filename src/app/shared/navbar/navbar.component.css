@@ -2,6 +2,11 @@ a {
   cursor: default;
 }
 
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: large;
+}
+
 li {
   color: #635985;
   font-family: 'Roboto Mono', monospace;
