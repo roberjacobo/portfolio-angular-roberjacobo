@@ -4,6 +4,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeModule } from "./home/home.module";
 import { SharedModule } from "./shared/shared.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExperienceModule } from "./experience/experience.module";
 // Components
 import { AppComponent } from "./app.component";
 
@@ -15,6 +16,7 @@ import { AppComponent } from "./app.component";
     HomeModule,
     SharedModule,
     BrowserAnimationsModule,
+    ExperienceModule
   ],
   providers: [],
   bootstrap: [AppComponent],

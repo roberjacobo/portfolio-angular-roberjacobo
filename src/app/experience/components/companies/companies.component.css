@@ -1,0 +1,12 @@
+.companies-container {
+  align-items: center;
+  background-image: url("src/assets/images/companies.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh;
+  color: rgba(255, 255, 255, 1);
+}

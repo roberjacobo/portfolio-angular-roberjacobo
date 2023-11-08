@@ -9,11 +9,48 @@
   /* Puedes agregar más formatos de fuente aquí si tienes varios archivos de fuente */
 }
 
+* {
+  transition: ease-in-out 1s;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'SpaceMono', monospace;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 4rem;
 }
 
 p {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
+}
+
+html, body, section {
+  block-size: 100%;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section:nth-of-type(even) {
+  color: white;
+  background: black;
+}
+
+section:nth-of-type(odd) {
+  color: black;
+  background: white;
 }
