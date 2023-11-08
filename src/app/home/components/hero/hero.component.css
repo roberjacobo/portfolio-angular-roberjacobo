@@ -1,0 +1,57 @@
+.hero {
+  align-items: center;
+  background-image: url("src/assets/images/hero_background.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  color: rgba(255, 255, 255, 1);
+}
+
+.blur {
+  /* From https://css.glass */
+  background: rgba(4, 4, 4, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.3px);
+  -webkit-backdrop-filter: blur(12.3px);
+  border: 1px solid rgba(4, 4, 4, 0.03);
+  height: auto;
+  width: 95vw;
+  border-radius: 5px;
+  animation: floatAnimation 3s infinite alternate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title__container {
+  padding: 0 0 0 3%;
+}
+
+.title {
+  font-size: 12vw;
+  margin: 0;
+}
+
+.role__container {
+  padding: 0 0 0 3%;
+}
+
+.role {
+  font-size: 5vw;
+  margin: 0;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
