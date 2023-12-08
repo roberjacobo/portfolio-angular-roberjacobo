@@ -16,7 +16,6 @@ p.about-title {
 }
 
 .image-container {
-  /* Contenedor para la imagen */
   display: flex;
   flex-direction: column;
   justify-content: center;
