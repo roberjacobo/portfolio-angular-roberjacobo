@@ -1,17 +1,18 @@
 .about-container {
+  /* Estilos del contenedor 'about' */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
-  overflow-x: hidden; /* Evitar el desbordamiento horizontal */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
 }
 
 p.about-title {
+  /* Estilos para el título dentro de 'about' */
   color: whitesmoke;
   font-size: 5rem;
-  transform: translateX(calc(5% + 10px));
+  transform: translateX(calc(5% + 10px)); /* Desplazamiento horizontal */
 }
 
 .image-container {
@@ -21,16 +22,17 @@ p.about-title {
   align-items: center;
   background-image: url("src/assets/images/about-image.jpeg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100%;
 }
 
 .blur {
+  /* Estilos para elementos con un efecto de desenfoque */
   color: whitesmoke;
   background: rgba(4, 4, 4, 0.23);
-  border-radius: 16px;
+  border-radius: 16px; /* Eliminada la duplicación */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);
@@ -38,18 +40,19 @@ p.about-title {
   height: auto;
   width: 50%;
   min-width: 283.5px;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3% 3% 3% 3%;
+  padding: 3%;
 }
 
 .blur:hover {
+  /* Efecto al pasar el ratón sobre elementos con clase 'blur' */
   transform: scale(1.01);
 }
 
 .about-text-container {
+  /* Contenedor para el texto de 'about' */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,11 +60,12 @@ p.about-title {
 }
 
 .about-text-container p {
+  /* Estilos para párrafos dentro del contenedor de texto de 'about' */
   font-size: 2rem;
   max-width: 100%;
 }
 
-
+/* Media queries para adaptabilidad */
 @media (max-width: 1080px) {
   .about-text-container p {
     font-size: 1.5rem;
