@@ -1,12 +1,13 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --host 0.0.0.0 --disable-host-check",
     "watch:localnetwork": "ng build --watch --configuration development",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "watch-n": "nodemon portfolio",
     "test": "ng test"
   },
   "private": true,
@@ -20,8 +21,9 @@
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
     "aos": "^3.0.0-beta.6",
+    "nodemon": "^3.0.2",
     "primeicons": "^6.0.1",
-    "primeng": "^15.0.0",
+    "primeng": "^16.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
