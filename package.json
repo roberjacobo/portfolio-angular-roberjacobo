@@ -6,6 +6,8 @@
     "start": "ng serve -o --host 0.0.0.0 --disable-host-check",
     "watch:localnetwork": "ng build --watch --configuration development",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
+    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
     "watch": "ng build --watch --configuration development",
     "watch-n": "nodemon portfolio",
     "test": "ng test"
