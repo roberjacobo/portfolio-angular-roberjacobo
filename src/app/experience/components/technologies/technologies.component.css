@@ -10,3 +10,22 @@
   height: 100vh;
   color: rgba(255, 255, 255, 1);
 }
+
+
+.logos-container {
+    /* Estilos para elementos con un efecto de desenfoque */
+    color: whitesmoke;
+    background: rgba(4, 4, 4, 0.23);
+    border-radius: 16px; /* Eliminada la duplicación */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.3px);
+    -webkit-backdrop-filter: blur(12.3px);
+    border: 1px solid rgba(4, 4, 4, 0.03);
+    height: auto;
+    width: 50%;
+    min-width: 283.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
