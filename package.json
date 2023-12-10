@@ -11,8 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "watch-n": "nodemon portfolio",
     "test": "ng test",
-    "delete:docs": "del docs",
-    "copy:dist": "copyfiles dist/gif-app/* ./docs -f"
+    "delete:docs": "rm -rf docs",
+    "copy:dist": "copyfiles dist/portfolio-angular-roberjacobo/* ./docs -f"
   },
   "private": true,
   "dependencies": {
