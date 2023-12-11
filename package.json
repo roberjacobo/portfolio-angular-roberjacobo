@@ -11,8 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "watch-n": "nodemon portfolio",
     "test": "ng test",
-    "delete:docs": "rm -rf docs",
-    "copy:dist": "copyfiles dist/portfolio-angular-roberjacobo/* ./docs -f"
+    "delete:docs": "del docs",
+    "copy:dist": "copyfiles dist/portfolio/* ./docs -f"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +38,7 @@
     "@angular/compiler-cli": "^16.0.0",
     "@types/jasmine": "~4.3.0",
     "copyfiles": "^2.4.1",
+    "del-cli": "^5.1.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
