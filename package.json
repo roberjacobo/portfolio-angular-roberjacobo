@@ -7,12 +7,13 @@
     "watch:localnetwork": "ng build --watch --configuration development",
     "build": "ng build",
     "build:href": "ng build --base-href ./",
-    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
+    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist && npm run create-cname",
     "watch": "ng build --watch --configuration development",
     "watch-n": "nodemon portfolio",
     "test": "ng test",
     "delete:docs": "del docs",
-    "copy:dist": "copyfiles dist/portfolio/* ./docs -f"
+    "copy:dist": "copyfiles dist/portfolio/* ./docs -f",
+    "create-cname": "echo 'www.robjacobo.dev' > ./docs/CNAME"
   },
   "private": true,
   "dependencies": {
