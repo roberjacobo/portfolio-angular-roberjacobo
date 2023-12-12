@@ -23,12 +23,14 @@ export class NavbarComponent implements OnInit {
           {
             label: "Technologies",
             icon: "pi pi-fw pi-code",
-            routerLink: '/experience'
+            routerLink: '/experience',
+            fragment: 'technologies'
           },
           {
             label: "Companies",
             icon: "pi pi-fw pi-building",
-            routerLink: '/experience'
+            routerLink: '/experience',
+            fragment: 'companies'
           },
         ],
       },
