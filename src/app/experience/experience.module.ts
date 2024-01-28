@@ -7,16 +7,16 @@ import { CompaniesComponent } from './components/companies/companies.component';
 
 
 @NgModule({
-  declarations: [
-    ExperiencePageComponent,
-    TechnologiesComponent,
-    CompaniesComponent
-  ],
-  exports: [
-    ExperiencePageComponent
-  ],
-  imports: [
-    CommonModule
-  ], 
+	declarations: [
+		ExperiencePageComponent,
+		TechnologiesComponent,
+		CompaniesComponent
+	],
+	exports: [
+		ExperiencePageComponent
+	],
+	imports: [
+		CommonModule
+	], 
 })
 export class ExperienceModule { }

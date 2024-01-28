@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TechLogo } from 'src/app/models/interfaces';
+import * as data from 'src/objects';
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
-  selector: 'app-technologies',
-  templateUrl: './technologies.component.html',
-  styleUrls: ['./technologies.component.css']
+	selector: 'app-technologies',
+	templateUrl: './technologies.component.html',
+	styleUrls: ['./technologies.component.css'],
 })
-export class TechnologiesComponent {
+export class TechnologiesComponent implements OnInit {
+	title: string = '';
+	logos: TechLogo[] = [];
 
+	ngOnInit() {
+		this.title = data.technologies.title;
+		this.logos = data.technologies.logos;
+	}
 }

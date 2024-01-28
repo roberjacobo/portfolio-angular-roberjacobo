@@ -11,21 +11,62 @@
   color: rgba(255, 255, 255, 1);
 }
 
+.title {
+  margin-bottom: 5vw;
+}
+
 
 .logos-container {
     /* Estilos para elementos con un efecto de desenfoque */
     color: whitesmoke;
-    background: rgba(4, 4, 4, 0.23);
+    background: rgba(115, 115, 115, 0.23);
     border-radius: 16px; /* Eliminada la duplicación */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(12.3px);
     -webkit-backdrop-filter: blur(12.3px);
     border: 1px solid rgba(4, 4, 4, 0.03);
-    height: auto;
-    width: 50%;
-    min-width: 283.5px;
+    height: 70vh;
+    width: 70vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 3%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+
+  /* Para asegurarse de que el contenido también se centre cuando no ocupe todo el espacio vertical */
+  height: 100%;
+}
+
+
+.single-logo-container {
+  min-width: 100px;
+  width: 10vw;
+  height: auto;
+  overflow: hidden;
+  margin: 15px;
+}
+
+img {
+  aspect-ratio: 3/2;
+  height: 100%;
+  mix-blend-mode: color-burn;
+  object-fit: contain;
+  width: 100%;
+}
+
+.logo {
+  width: 100px;
+  height: 100px; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px;
 }
