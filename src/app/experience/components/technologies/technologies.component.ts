@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TechLogo } from 'src/app/models/interfaces';
 import * as data from 'src/objects';
-import { NgOptimizedImage } from '@angular/common'
 
 @Component({
 	selector: 'app-technologies',
