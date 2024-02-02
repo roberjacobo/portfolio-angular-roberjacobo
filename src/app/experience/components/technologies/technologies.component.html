@@ -3,7 +3,7 @@
     <div class="title">{{ title }}</div>
     <div class="content">
       <div class="single-logo-container" *ngFor="let logo of logos">
-        <img src="{{ logo.logoUrl }}" alt="{{ logo.name }}" />
+        <img [src]="logo.logoUrl" [alt]="logo.name" />
       </div>
     </div>
   </div>

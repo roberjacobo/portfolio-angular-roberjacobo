@@ -10,6 +10,6 @@ export const technologies = {
 		{ name: 'wdio', logoUrl: 'assets/images/tech-logos/webdriverio-logo.png' },
 		{ name: 'bash', logoUrl: 'assets/images/tech-logos/bash.png' },
 		{ name: 'git', logoUrl: 'assets/images/tech-logos/git.png' },
-		{ name: 'github', logoUrl: 'assets/GitHubLogo.png' },
+		{ name: 'github', logoUrl: 'assets/images/tech-logos/GitHubLogo.png' },
 	],
 };
