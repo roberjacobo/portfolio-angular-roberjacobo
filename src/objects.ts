@@ -1,8 +1,8 @@
 export const technologies = {
 	title: 'Technologies I\'ve worked with',
 	logos: [
-		{ name: 'typescript', logoUrl: 'assets/images/tech-logos/Typescript.png' },
 		{ name: 'nodejs', logoUrl: 'assets/images/tech-logos/node.png' },
+		{ name: 'typescript', logoUrl: 'assets/images/tech-logos/typescript.png' },
 		{ name: 'angular', logoUrl: 'assets/images/tech-logos/angular.webp' },
 		{ name: 'python', logoUrl: 'assets/images/tech-logos/Python.png' },
 		{ name: 'mongodb', logoUrl: 'assets/images/tech-logos/mongodb.png' },
