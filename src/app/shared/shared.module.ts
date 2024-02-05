@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimengModule } from '../primeng/primeng-module/primeng.module';
+import { RouterModule } from '@angular/router';
 // Components
-import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-	declarations: [NavbarComponent],
-	imports: [CommonModule, PrimengModule],
-	exports: [NavbarComponent],
+	declarations: [SidebarComponent],
+	imports: [CommonModule, PrimengModule, RouterModule],
+	exports: [SidebarComponent],
 })
 export class SharedModule {}

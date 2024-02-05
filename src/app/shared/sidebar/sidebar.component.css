@@ -1,0 +1,33 @@
+/* sidebar.component.css */
+:host ::ng-deep .p-sidebar {
+  font-size: 1rem;
+}
+
+:host ::ng-deep .p-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+:host ::ng-deep .p-sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+:host ::ng-deep .p-sidebar a:hover {
+  background-color: #f0f0f0;
+}
+
+.p-button-fixed {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+}
+
+/* Ajusta el tamaño del texto del botón a 1rem */
+:host ::ng-deep .p-button-fixed .p-button-label {
+  font-size: 1.5rem;
+}
