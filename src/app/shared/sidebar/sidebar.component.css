@@ -1,6 +1,6 @@
-/* sidebar.component.css */
+/* Estilos generales del sidebar */
 :host ::ng-deep .p-sidebar {
-  font-size: 1rem;
+  font-size: 1rem; /* Tamaño base para el texto dentro del sidebar */
 }
 
 :host ::ng-deep .p-sidebar ul {
@@ -9,17 +9,20 @@
   margin: 0;
 }
 
+/* Estilos para todos los enlaces dentro del sidebar */
 :host ::ng-deep .p-sidebar a {
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 }
 
+/* Efecto hover para enlaces */
 :host ::ng-deep .p-sidebar a:hover {
   background-color: #f0f0f0;
 }
 
+/* Botón fijo para abrir el sidebar */
 .p-button-fixed {
   position: fixed;
   right: 1rem;
@@ -27,7 +30,37 @@
   z-index: 1000;
 }
 
-/* Ajusta el tamaño del texto del botón a 1rem */
+/* Ajuste del tamaño del texto del botón */
 :host ::ng-deep .p-button-fixed .p-button-label {
   font-size: 1.5rem;
+}
+
+/* Animación para la expansión de submenús */
+.submenu {
+  display: none;
+}
+
+.submenu.expanded {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Ajuste de tamaño de letra para elementos principales */
+:host ::ng-deep .p-sidebar > ul > li > a {
+  font-size: 1rem; /* Tamaño mayor para elementos principales */
+}
+
+/* Ajuste de tamaño de letra para elementos principales usando una clase específica */
+:host ::ng-deep .p-sidebar .main-item-link {
+  font-size: 1.1rem; /* Ajusta el tamaño según necesites */
+}
+
+/* Ajuste de tamaño de letra para sub-elementos */
+:host ::ng-deep .p-sidebar .submenu a {
+  font-size: 0.9rem; /* Tamaño estándar para sub-elementos, asegurando contraste */
 }
