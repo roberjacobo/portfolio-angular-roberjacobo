@@ -1,0 +1,22 @@
+<p-sidebar [(visible)]="sidebarVisible" position="right" styleClass="ui-sidebar-md">
+    <h3>Menú</h3>
+    <ul class="list-none">
+        <li *ngFor="let item of items">
+            <a [routerLink]="item.routerLink" *ngIf="!item.items">
+                <i class="{{item.icon}}"></i> {{item.label}}
+            </a>
+            <a *ngIf="item.items" (click)="sidebarVisible = false">
+                <i class="{{item.icon}}"></i> {{item.label}}
+            </a>
+            <ul *ngIf="item.items">
+                <li *ngFor="let childItem of item.items">
+                    <a [routerLink]="childItem.routerLink" [fragment]="childItem.fragment">
+                        <i class="{{childItem.icon}}"></i> {{childItem.label}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</p-sidebar>
+
+<p-button (click)="sidebarVisible = true" icon="pi pi-bars" label="Menú" class="p-button-fixed"></p-button>
