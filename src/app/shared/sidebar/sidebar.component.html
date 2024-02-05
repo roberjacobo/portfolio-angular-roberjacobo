@@ -1,16 +1,19 @@
-<p-sidebar [(visible)]="sidebarVisible" position="right" styleClass="ui-sidebar-md">
+<p-sidebar [(visible)]="sidebarVisible" (onHide)="onSidebarHide()" position="right" styleClass="ui-sidebar-md">
     <h3>Menú</h3>
     <ul class="list-none">
         <li *ngFor="let item of items">
-            <a [routerLink]="item.routerLink" *ngIf="!item.items">
+            <!-- Enlace para elementos sin subelementos -->
+            <a *ngIf="!item.items" [routerLink]="item.routerLink" (click)="toggleSidebar()">
                 <i class="{{item.icon}}"></i> {{item.label}}
             </a>
-            <a *ngIf="item.items" (click)="sidebarVisible = false">
+            <!-- Manejador para elementos con subelementos, si necesitas que estos cierren el sidebar, puedes añadir (click)="toggleSidebar()" aquí también -->
+            <a *ngIf="item.items">
                 <i class="{{item.icon}}"></i> {{item.label}}
             </a>
             <ul *ngIf="item.items">
                 <li *ngFor="let childItem of item.items">
-                    <a [routerLink]="childItem.routerLink" [fragment]="childItem.fragment">
+                    <!-- Asegúrate de que el sidebar se cierra al seleccionar un subelemento -->
+                    <a [routerLink]="childItem.routerLink" [fragment]="childItem.fragment" (click)="toggleSidebar()">
                         <i class="{{childItem.icon}}"></i> {{childItem.label}}
                     </a>
                 </li>
@@ -18,5 +21,4 @@
         </li>
     </ul>
 </p-sidebar>
-
-<p-button (click)="sidebarVisible = true" icon="pi pi-bars" label="Menú" class="p-button-fixed"></p-button>
+<p-button (click)="toggleSidebar()" icon="pi pi-bars" label="Menú" class="p-button-fixed"></p-button>
