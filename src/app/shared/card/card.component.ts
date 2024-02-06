@@ -1,18 +1,16 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CompaniesInfo } from 'src/app/models/interfaces';
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  selector: 'shared-card',
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
+  @Input() company!: CompaniesInfo;
 
-  ngOnInit(): void { }
+  constructor() { }
 
+  ngOnInit(): void {
+  }
 }

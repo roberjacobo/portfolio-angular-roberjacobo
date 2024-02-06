@@ -1,6 +1,7 @@
 <section class="companies-container">
-  <div class="card flex justify-content-center">
-    
-</div>
-  <div class="cards-container"></div>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <shared-card *ngFor="let company of companiesList" [company]="company"></shared-card>
+    </div>
+  </div>
 </section>
