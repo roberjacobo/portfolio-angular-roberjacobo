@@ -11,6 +11,7 @@
 
 * {
   transition: ease-in-out 1s;
+  text-align: justify;
 }
 
 html, body {

@@ -6,8 +6,10 @@ import { Component } from '@angular/core';
 	styleUrls: ['./about.component.css'],
 })
 export class AboutComponent {
-	content: string = `Experienced full-stack developer with a solid five-year 
-    history in the software industry. My core expertise lies in backend development, 
-    and I have a demonstrated track record of fostering productive collaborations with prominent 
-    companies and global teams, resulting in consistently successful project outcomes.`;
+	content: string = `Versatile Full-Stack Developer with five years of progressive experience in the software industry.
+	I started with a focus on full-stack solutions, moved into test automation to ensure software quality,
+	and have recently honed my skills in Frontend development, crafting intuitive and engaging user
+	interfaces. This path has granted me a comprehensive understanding of the software development
+	lifecycle and the ability to collaborate effectively with international teams and top tier companies,
+	delivering successful outcomes at each phase.`;
 }
