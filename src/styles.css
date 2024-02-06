@@ -6,7 +6,6 @@
   src: url('./assets/fonts/SpaceMono-BoldItalic.ttf') format('truetype');
   src: url('./assets/fonts/SpaceMono-Italic.ttf') format('truetype');
   src: url('./assets/fonts/SpaceMono-Regular.ttf') format('truetype');
-  /* Puedes agregar más formatos de fuente aquí si tienes varios archivos de fuente */
 }
 
 * {

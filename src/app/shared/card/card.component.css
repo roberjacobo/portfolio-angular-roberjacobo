@@ -2,7 +2,6 @@
   display: block;
 }
 
-/* card.component.css */
 .card-custom {
-  min-height: 400px; /* Establece un alto mínimo */
+  min-height: 400px;
 }
