@@ -10,3 +10,15 @@
   height: 100vh;
   color: rgba(255, 255, 255, 1);
 }
+
+.carousel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px 0;
+}
+
+.carousel-track > shared-card {
+  display: inline-block;
+  white-space: normal;
+  margin: 0 10px;
+}
