@@ -13,3 +13,10 @@ export const technologies = {
 		{ name: 'github', logoUrl: 'assets/images/tech-logos/GitHubLogo.png' },
 	],
 };
+
+export const companies = {
+	title: 'Companies I\'ve worked with',
+	logos: [
+		{ name: 'typescript', logoUrl: 'assets/images/tech-logos/typescript-logo.png', description: '' },
+	],
+};

@@ -10,3 +10,9 @@
   height: 100vh;
   color: rgba(255, 255, 255, 1);
 }
+
+.cards-container {
+  height: 50vh;
+  width: 20vw;
+  background-color: aqua;
+}
