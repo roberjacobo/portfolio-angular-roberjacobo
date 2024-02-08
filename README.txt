@@ -38,7 +38,7 @@ Stay tuned for more features and enhancements as I continue to build out this di
 
 Feel free to explore the current version of my portfolio and check back for updates as I progress. Your feedback and suggestions are always welcome as I strive to create a portfolio that not only reflects my capabilities but also serves as a resource for others in the tech community.
 
-Visit: [www.robjacobo.dev](http://www.robjacobo.dev)
+Visit: http://www.robjacobo.dev
 
 ---
 
