@@ -1,40 +1,43 @@
 <p-sidebar [(visible)]="sidebarVisible" (onHide)="onSidebarHide()" position="right" styleClass="ui-sidebar-md">
-    <h3>Menu</h3>
-    <ul class="list-none">
-        <li *ngFor="let item of items; trackBy: trackByFn"> <!-- Uso de trackBy para mejorar rendimiento -->
-            <ng-container *ngIf="item.items; else singleItemTemplate">
-                <div (click)="item.expanded = !item.expanded" class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple main-item">
-                    <span class="font-medium">
-                        <i class="{{item.icon}}"></i> {{item.label}}
-                    </span>
-                    <i class="pi" [ngClass]="{'pi-chevron-down': !item.expanded, 'pi-chevron-up': item.expanded}"></i>
-                </div>
-                <ul *ngIf="item.expanded" class="submenu expanded">
-                    <li *ngFor="let childItem of item.items; trackBy: trackByFn"> <!-- Aplica también aquí trackBy -->
-                        <a *ngIf="childItem['externalLink']; else internalLinkTemplate"
-                            href="{{childItem['externalLink']}}" target="_blank" rel="noopener noreferrer" (click)="toggleSidebar()" class="sub-item-link">
-                            <i class="{{childItem.icon}}"></i> {{childItem.label}}
-                        </a>
-                        <ng-template #internalLinkTemplate>
-                            <a [routerLink]="childItem.routerLink" [fragment]="childItem.fragment" (click)="toggleSidebar()" class="sub-item-link">
-                                <i class="{{childItem.icon}}"></i> {{childItem.label}}
-                            </a>
-                        </ng-template>
-                    </li>
-                </ul>
-            </ng-container>
-            <ng-template #singleItemTemplate>
-                <a *ngIf="item['externalLink']; else internalSingleItemTemplate"
-                    href="{{item['externalLink']}}" target="_blank" rel="noopener noreferrer" (click)="toggleSidebar()" class="main-item-link">
-                    <i class="{{item.icon}}"></i> {{item.label}}
-                </a>
-                <ng-template #internalSingleItemTemplate>
-                    <a [routerLink]="item.routerLink" (click)="toggleSidebar()" class="main-item-link">
-                        <i class="{{item.icon}}"></i> {{item.label}}
-                    </a>
-                </ng-template>
-            </ng-template>
-        </li>
-    </ul>
+	<h3>Menu</h3>
+	<ul class="list-none">
+		<li *ngFor="let item of items; trackBy: trackByFn"> <!-- Uso de trackBy para mejorar rendimiento -->
+			<ng-container *ngIf="item.items; else singleItemTemplate">
+				<div (click)="item.expanded = !item.expanded"
+					class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple main-item">
+					<span class="font-medium">
+						<i class="{{item.icon}}"></i> {{item.label}}
+					</span>
+					<i class="pi" [ngClass]="{'pi-chevron-down': !item.expanded, 'pi-chevron-up': item.expanded}"></i>
+				</div>
+				<ul *ngIf="item.expanded" class="submenu expanded">
+					<li *ngFor="let childItem of item.items; trackBy: trackByFn"> <!-- Aplica también aquí trackBy -->
+						<a *ngIf="childItem['externalLink']; else internalLinkTemplate"
+							href="{{childItem['externalLink']}}" target="_blank" rel="noopener noreferrer"
+							(click)="toggleSidebar()" class="sub-item-link">
+							<i class="{{childItem.icon}}"></i> {{childItem.label}}
+						</a>
+						<ng-template #internalLinkTemplate>
+							<a [routerLink]="childItem.routerLink" [fragment]="childItem.fragment"
+								(click)="toggleSidebar()" class="sub-item-link">
+								<i class="{{childItem.icon}}"></i> {{childItem.label}}
+							</a>
+						</ng-template>
+					</li>
+				</ul>
+			</ng-container>
+			<ng-template #singleItemTemplate>
+				<a *ngIf="item['externalLink']; else internalSingleItemTemplate" href="{{item['externalLink']}}"
+					target="_blank" rel="noopener noreferrer" (click)="toggleSidebar()" class="main-item-link">
+					<i class="{{item.icon}}"></i> {{item.label}}
+				</a>
+				<ng-template #internalSingleItemTemplate>
+					<a [routerLink]="item.routerLink" (click)="toggleSidebar()" class="main-item-link">
+						<i class="{{item.icon}}"></i> {{item.label}}
+					</a>
+				</ng-template>
+			</ng-template>
+		</li>
+	</ul>
 </p-sidebar>
 <p-button (click)="toggleSidebar()" icon="pi pi-bars" label="Menu" class="p-button-fixed"></p-button>

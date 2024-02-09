@@ -13,7 +13,7 @@
   text-align: justify;
 }
 
-html, body {
+html {
   scroll-behavior: smooth;
 }
 
@@ -31,18 +31,6 @@ p {
 
 html, body, section {
   block-size: 100%;
-}
-
-html {
-  scroll-snap-type: y mandatory;
-}
-
-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 section:nth-of-type(even) {

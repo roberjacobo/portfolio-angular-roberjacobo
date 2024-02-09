@@ -4,11 +4,17 @@ import { HomeComponent } from './home/pages/home/home.component';
 import { ExperiencePageComponent } from './experience/pages/experience-page/experience-page.component';
 import { TechnologiesComponent } from './experience/components/technologies/technologies.component';
 import { CompaniesComponent } from './experience/components/companies/companies.component';
+import { AboutComponent } from './home/components/about/about.component';
+import { HobbiesComponent } from './home/components/hobbies/hobbies.component';
 
 const routes: Routes = [
 	{
 		path: 'home',
 		component: HomeComponent,
+		children: [
+			{ path: 'about', component: AboutComponent },
+			{ path: 'hobbies', component: HobbiesComponent },
+		]
 	},
 	{
 		path: 'experience',
@@ -27,7 +33,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'top' }, )],
+	imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'disabled' })],
 	exports: [RouterModule],
 })
 export class AppRoutingModule {}
+  
