@@ -5,6 +5,7 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExperienceModule } from './experience/experience.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // Components
 import { AppComponent } from './app.component';
 
@@ -18,7 +19,7 @@ import { AppComponent } from './app.component';
 		BrowserAnimationsModule,
 		ExperienceModule
 	],
-	providers: [],
+	providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
