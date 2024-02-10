@@ -1,9 +1,9 @@
 <div class="card flex justify-content-center" data-aos="flip-right">
-    <p-card header="{{company.name}}" subheader="{{company.role}}" [style]="{ width: '360px' }" class="card-custom">
+    <p-card header="{{company.name}}" subheader="{{company.role}}" [ngStyle]="{ width: '360px' }" class="card-custom">
         <ng-template pTemplate="header">
-            <img alt="{{company.name}}" src="{{company.logoUrl}}" />
+            <img alt="{{company.name}}" src="{{company.logoUrl}}" class="card-image"/>
         </ng-template>
-        <p>
+        <p class="card-description">
             {{company.description}}
         </p>
         <!-- Botones u otros elementos en el footer -->
