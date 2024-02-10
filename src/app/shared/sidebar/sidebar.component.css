@@ -4,6 +4,7 @@
 }
 
 :host ::ng-deep .p-sidebar ul {
+  cursor: default;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -11,15 +12,16 @@
 
 /* Estilos para todos los enlaces dentro del sidebar */
 :host ::ng-deep .p-sidebar a {
+  cursor: pointer;
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 1rem 1rem;
+  padding: 1rem 0 1rem 2.5rem;
 }
 
 /* Efecto hover para enlaces */
 :host ::ng-deep .p-sidebar a:hover {
-  background-color: #f0f0f0;
+  background-color: #f0f0f06b;
   color: black;
 }
 
@@ -53,7 +55,8 @@
 
 ::ng-deep .p-sidebar {
   color: whitesmoke !important;
-  background: rgba(4, 4, 4, 0.500);
+  background: rgba(4, 4, 4, 0.409);
+  border-radius: 16px;  
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);
