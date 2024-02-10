@@ -35,7 +35,6 @@
 ::ng-deep .p-tabview .p-tabview-nav {
   color: whitesmoke !important;
   background: rgba(4, 4, 4, 0.23);
-  border-radius: 16px;  
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);
@@ -45,7 +44,6 @@
 ::ng-deep .p-tabview .p-tabview-nav li.p-tabview-selected {
   color: whitesmoke !important;
   background: rgba(4, 4, 4, 0.23);
-  border-radius: 16px;  
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);
@@ -55,7 +53,6 @@
 ::ng-deep .p-tabview .p-tabview-panels {
   color: whitesmoke !important;
   background: rgba(4, 4, 4, 0.23);
-  border-radius: 16px;  
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);

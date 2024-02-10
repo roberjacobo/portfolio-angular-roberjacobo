@@ -53,8 +53,7 @@
 
 ::ng-deep .p-sidebar {
   color: whitesmoke !important;
-  background: rgba(4, 4, 4, 0.409);
-  border-radius: 16px;  
+  background: rgba(4, 4, 4, 0.500);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);

@@ -1,54 +1,74 @@
 /* Estilos por defecto */
 .card-custom {
-  width: 360px; /* Tamaño predeterminado */
+	width: 360px;
+	/* Tamaño predeterminado */
+}
+
+::ng-deep .card {
+	background-color: transparent;
+}
+
+::ng-deep .p-card {
+	color: whitesmoke;
+	background: rgba(4, 4, 4, 0.23) !important;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(12.3px);
+	-webkit-backdrop-filter: blur(12.3px);
+	border: 1px solid rgba(4, 4, 4, 0.03);
 }
 
 :host ::ng-deep .p-card .p-card-title {
-  font-size: 1.8rem;
+	text-align: left;
+	font-size: 1.5rem;
 }
 
 :host ::ng-deep .p-card .p-card-subtitle {
-  font-size: 1rem;
-  margin-bottom: 0;
+	font-size: 1rem;
+	margin-bottom: 0;
 }
 
 :host ::ng-deep .p-card-content {
-  padding: 10px;
+	padding: 10px;
 }
 
-
 :host ::ng-deep .card-custom .card-description {
-  font-size: 12px !important; /* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
+	font-size: 12px !important;
+	/* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
 }
 
 /* Estilos para pantallas más pequeñas */
 @media only screen and (max-width: 600px) {
-  :host ::ng-deep .card-custom {
-    width: 100% !important; /* Toma el ancho completo en pantallas pequeñas */
-    max-width: 300px !important; /* Máximo ancho para pantallas pequeñas */
-    min-height: 200px !important; /* Altura ajustada para pantallas pequeñas */
-  }
+	:host ::ng-deep .card-custom {
+		width: 100% !important;
+		/* Toma el ancho completo en pantallas pequeñas */
+		max-width: 300px !important;
+		/* Máximo ancho para pantallas pequeñas */
+		min-height: 200px !important;
+		/* Altura ajustada para pantallas pequeñas */
+	}
 
-  :host ::ng-deep .card-custom .card-image {
-    max-width: 100% !important; /* Hace que las imágenes sean responsivas */
-    height: auto !important; /* Mantiene la relación de aspecto */
-  }
+	:host ::ng-deep .card-custom .card-image {
+		max-width: 100% !important;
+		/* Hace que las imágenes sean responsivas */
+		height: auto !important;
+		/* Mantiene la relación de aspecto */
+	}
 
-  :host ::ng-deep .p-card .p-card-title {
-    font-size: 1rem;
-  }
+	:host ::ng-deep .p-card .p-card-title {
+		font-size: 1rem;
+	}
 
-  :host ::ng-deep .p-card .p-card-subtitle {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-  }
+	:host ::ng-deep .p-card .p-card-subtitle {
+		font-size: 0.8rem;
+		margin-bottom: 0;
+	}
 
-  :host ::ng-deep .p-card-content {
-    padding: 0;
-  }
-  
+	:host ::ng-deep .p-card-content {
+		padding: 0;
+	}
 
-  :host ::ng-deep .card-custom .card-description {
-    font-size: 10px !important; /* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
-  }
+	:host ::ng-deep .card-custom .card-description {
+		font-size: 10px !important;
+		/* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
+	}
 }
