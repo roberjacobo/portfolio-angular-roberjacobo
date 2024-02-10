@@ -22,8 +22,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
 				expanded: false,
 				items: [
 					{
-						label: 'Home',
-						icon: 'pi pi-user',
+						label: 'Welcome',
+						icon: 'pi pi-briefcase',
 						routerLink: '/home',
 						fragment: 'home'
 					},
@@ -35,7 +35,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
 					},
 					{
 						label: 'Hobbies',
-						icon: 'pi pi-user',
+						icon: 'pi pi-ticket',
 						routerLink: '/home',
 						fragment: 'hobbies'
 					}

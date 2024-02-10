@@ -11,7 +11,7 @@
 p.about-title {
   /* Estilos para el título dentro de 'about' */
   color: whitesmoke;
-  font-size: 5rem;
+  font-size: 3rem;
   transform: translateX(calc(5% + 10px)); /* Desplazamiento horizontal */
 }
 
@@ -61,7 +61,7 @@ p.about-title {
 
 .about-text-container p {
   /* Estilos para párrafos dentro del contenedor de texto de 'about' */
-  font-size: 2rem;
+  font-size: 1.5rem;
   max-width: 100%;
 }
 
