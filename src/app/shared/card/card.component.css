@@ -3,6 +3,24 @@
   width: 360px; /* Tamaño predeterminado */
 }
 
+:host ::ng-deep .p-card .p-card-title {
+  font-size: 1.8rem;
+}
+
+:host ::ng-deep .p-card .p-card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+:host ::ng-deep .p-card-content {
+  padding: 10px;
+}
+
+
+:host ::ng-deep .card-custom .card-description {
+  font-size: 12px !important; /* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
+}
+
 /* Estilos para pantallas más pequeñas */
 @media only screen and (max-width: 600px) {
   :host ::ng-deep .card-custom {

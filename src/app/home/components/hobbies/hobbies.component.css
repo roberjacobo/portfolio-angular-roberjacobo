@@ -11,12 +11,17 @@
   color: rgba(255, 255, 255, 1);
 }
 
-.text-container {
-  width: 50%;
+.element-container {
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.card {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .hobbies-content-container {
@@ -26,17 +31,54 @@
   justify-content: space-evenly;
 }
 
-.hobbies-title {
-  background-color: white;
-  color: black;
-  font-size: 2rem;
+/* En tu archivo de estilos del componente */
+::ng-deep .p-tabview .p-tabview-nav {
+  color: whitesmoke !important;
+  background: rgba(4, 4, 4, 0.23);
+  border-radius: 16px;  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.3px);
+  -webkit-backdrop-filter: blur(12.3px);
+  border: 1px solid rgba(4, 4, 4, 0.03);
 }
 
-.hobbies-outro {
-  background-color: white;
-  color: black;
-  font-size: 1rem;
+::ng-deep .p-tabview .p-tabview-nav li.p-tabview-selected {
+  color: whitesmoke !important;
+  background: rgba(4, 4, 4, 0.23);
+  border-radius: 16px;  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.3px);
+  -webkit-backdrop-filter: blur(12.3px);
+  border: 1px solid rgba(4, 4, 4, 0.03);
 }
+
+::ng-deep .p-tabview .p-tabview-panels {
+  color: whitesmoke !important;
+  background: rgba(4, 4, 4, 0.23);
+  border-radius: 16px;  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.3px);
+  -webkit-backdrop-filter: blur(12.3px);
+  border: 1px solid rgba(4, 4, 4, 0.03);
+}
+
+::ng-deep .p-tabview .p-tabview-panel {
+  color: whitesmoke !important;
+  border-color: #00408f; /* Cambia el color del borde del contenido de la pestaña */
+}
+
+::ng-deep .p-tabview .p-tabview-nav li a {
+  color: whitesmoke !important;
+  text-decoration: none;
+  background: #0000;
+}
+
+::ng-deep .p-tabview .p-tabview-nav-btn.p-link {
+  background: #0000;
+  border-color: #0000;
+  box-shadow: none;
+}
+
 
 @media (max-width: 1080px) {
   .hobbies-title {

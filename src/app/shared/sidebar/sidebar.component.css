@@ -20,6 +20,7 @@
 /* Efecto hover para enlaces */
 :host ::ng-deep .p-sidebar a:hover {
   background-color: #f0f0f0;
+  color: black;
 }
 
 /* Botón fijo para abrir el sidebar */
@@ -48,6 +49,16 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+::ng-deep .p-sidebar {
+  color: whitesmoke !important;
+  background: rgba(4, 4, 4, 0.409);
+  border-radius: 16px;  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.3px);
+  -webkit-backdrop-filter: blur(12.3px);
+  border: 1px solid rgba(4, 4, 4, 0.109);
 }
 
 /* Ajuste de tamaño de letra para elementos principales */
