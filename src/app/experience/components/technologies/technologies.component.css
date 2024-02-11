@@ -1,6 +1,6 @@
 .technologies-container {
   align-items: center;
-  background-image: url("src/assets/images/technologies.webp");
+  background-image: url("src/assets/images/technologies.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,6 @@
     /* Estilos para elementos con un efecto de desenfoque */
     color: whitesmoke;
     background: rgba(115, 115, 115, 0.23);
-       
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(12.3px);
     -webkit-backdrop-filter: blur(12.3px);
@@ -59,9 +58,9 @@
 }
 
 img {
+  z-index: 9999;
   aspect-ratio: 3/2;
   height: 100%;
-  mix-blend-mode: color-burn;
   object-fit: contain;
   width: 100%;
 }

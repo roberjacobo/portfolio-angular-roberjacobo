@@ -20,7 +20,7 @@ p.about-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("src/assets/images/about-image.webp");
+  background-image: url("src/assets/images/about.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -32,7 +32,6 @@ p.about-title {
   /* Estilos para elementos con un efecto de desenfoque */
   color: whitesmoke;
   background: rgba(4, 4, 4, 0.23);
-     
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.3px);
   -webkit-backdrop-filter: blur(12.3px);
