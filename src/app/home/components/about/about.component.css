@@ -20,7 +20,7 @@ p.about-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("src/assets/images/about.jpg");
+  background-image: url("src/assets/images/about.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
