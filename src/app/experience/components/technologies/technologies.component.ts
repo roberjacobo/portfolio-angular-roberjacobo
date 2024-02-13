@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TechLogo } from 'src/app/models/interfaces';
 import * as data from 'src/objects';
 
@@ -6,6 +6,7 @@ import * as data from 'src/objects';
 	selector: 'app-technologies',
 	templateUrl: './technologies.component.html',
 	styleUrls: ['./technologies.component.css'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TechnologiesComponent implements OnInit {
 	title: string = '';
