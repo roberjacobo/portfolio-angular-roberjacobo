@@ -8,6 +8,8 @@
   flex-direction: row;
   justify-content: space-around;
   height: 100vh;
+  min-height: 100vh; /* Fallback para navegadores que no soportan variables CSS */
+  min-height: calc(var(--vh, 1vh) * 100);
   color: rgba(255, 255, 255, 1);
 }
 
