@@ -1,6 +1,6 @@
 .hobbies-container {
   align-items: center;
-  background-image: url("src/assets/images/hobbies_.webp");
+  background-image: url("src/assets/images/hobbies.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -64,6 +64,7 @@
 ::ng-deep .p-tabview .p-tabview-panel {
   color: whitesmoke !important;
   border-color: #00408f; /* Cambia el color del borde del contenido de la pestaña */
+  min-height: 200px;
 }
 
 ::ng-deep .p-tabview .p-tabview-nav li a {
@@ -78,15 +79,8 @@
   box-shadow: none;
 }
 
-
-@media (max-width: 1080px) {
-  .hobbies-title {
-    font-size: 1.5rem;
-  }
-}
-
 @media (max-width: 750px) {
   .text-container {
-    width: 90%;
+    width: 95%;
   }
 }

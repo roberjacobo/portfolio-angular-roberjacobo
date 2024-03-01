@@ -1,95 +1,74 @@
+/* Estilos básicos del contenedor y posicionamiento */
 .about-container {
-  /* Estilos del contenedor 'about' */
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-image: url("src/assets/images/about.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
-  min-height: 100vh; /* Fallback para navegadores que no soportan variables CSS */
-  min-height: calc(var(--vh, 1vh) * 100);
-  width: 100%;
-  overflow: hidden;
-  /* Oculta cualquier contenido que se desborde del contenedor */
 }
 
-p.about-title {
-  /* Estilos para el título dentro de 'about' */
-  color: whitesmoke;
-  font-size: 3rem;
-  transform: translateX(calc(5% + 10px));
-  /* Desplazamiento horizontal */
+.content-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
 }
 
 .image-container {
+  width: 50%;
+}
+
+.text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000000;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #000000, #434343, #000000);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #000000, #434343, #000000);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-}
-
-.blur {
-  /* Estilos para elementos con un efecto de desenfoque */
-  color: whitesmoke;
-  background: rgba(4, 4, 4, 0.23);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12.3px);
-  -webkit-backdrop-filter: blur(12.3px);
-  border: 1px solid rgba(4, 4, 4, 0.03);
-  height: auto;
   width: 50%;
-  min-width: 283.5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3%;
+  color: black;
+  font-size: 1.5vw;
 }
 
-.blur:hover {
-  /* Efecto al pasar el ratón sobre elementos con clase 'blur' */
-  transform: scale(1.01);
+h2 {
+  font-size: 2vw;
 }
 
-.about-text-container {
-  /* Contenedor para el texto de 'about' */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5%;
+.line {
+  width: 50%;
+  border: 0;
+  height: 2px;
+  text-align: center;
+  background-image: linear-gradient(to right, #fff, #000, #fff);
 }
 
-.about-text-container p {
-  /* Estilos para párrafos dentro del contenedor de texto de 'about' */
-  font-size: 1.5rem;
-  max-width: 100%;
-}
-
-/* Media queries para adaptabilidad */
-@media (max-width: 1080px) {
-  .about-text-container p {
-    font-size: 1.5rem;
+@media (max-width: 850px) {
+  .about-container {
+    flex-direction: column;
+    justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
   }
 
-  p.about-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 590px) {
-  .about-text-container p {
-    font-size: 1rem;
+  .content-container {
+    flex-direction: column;
+    align-items: center; /* Centra los hijos horizontalmente */
   }
 
-  p.about-title {
-    font-size: 2rem;
+  .image-container, .text-container {
+    width: 100%; /* Hace que ocupen todo el ancho disponible */
+    /* Añade un poco de margen entre los contenedores para dispositivos móviles */
+    margin-bottom: 20px; 
+  }
+
+  .text-container {
+    font-size: 4vw; /* Ajusta el tamaño de fuente para mejor legibilidad en dispositivos más pequeños */
+  }
+
+  h2 {
+    font-size: 5vw; /* Ajusta el tamaño del título para dispositivos más pequeños */
+  }
+
+  .line {
+    width: 80%; /* Ajusta el ancho de las líneas para dispositivos más pequeños */
   }
 }

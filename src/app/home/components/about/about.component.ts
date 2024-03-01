@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  content: string = `Versatile Full-Stack Developer with five years of progressive experience in the software industry.
+  title: string = 'About me'
+  content: string = `Versatile Fullstack Developer with five years of progressive experience in the software industry.
   I started with a focus on full-stack solutions, moved into test automation to ensure software quality,
   and have recently honed my skills in Frontend development, crafting intuitive and engaging user
   interfaces. This path has granted me a comprehensive understanding of the software development
