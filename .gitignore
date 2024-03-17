@@ -129,3 +129,5 @@ out
 .pnp.*
 
 .angular/
+/assets/images/.DS_Store
+.DS_Store
