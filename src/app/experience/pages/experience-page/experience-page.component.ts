@@ -3,9 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
-	selector: 'app-experience-page',
-	templateUrl: './experience-page.component.html',
-	styleUrls: ['./experience-page.component.css']
+    selector: 'app-experience-page',
+    templateUrl: './experience-page.component.html',
+    styleUrls: ['./experience-page.component.css'],
+    standalone: false
 })
 
 export class ExperiencePageComponent implements OnInit {

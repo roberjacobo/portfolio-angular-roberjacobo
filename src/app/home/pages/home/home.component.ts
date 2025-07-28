@@ -3,9 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
-	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.css'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HomeComponent implements OnInit {
 

@@ -3,10 +3,11 @@ import { MenuItem } from 'primeng/api';
 import { Renderer2 } from '@angular/core';
 
 @Component({
-	selector: 'shared-sidebar',
-	templateUrl: './sidebar.component.html',
-	styleUrls: ['./sidebar.component.css'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'shared-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SidebarComponent implements OnInit, OnDestroy {
 	items: MenuItem[] = [];

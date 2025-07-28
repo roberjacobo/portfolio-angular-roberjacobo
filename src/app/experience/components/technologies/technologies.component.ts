@@ -3,9 +3,10 @@ import { TechLogo } from 'src/app/models/interfaces';
 import * as data from 'src/objects';
 
 @Component({
-	selector: 'app-technologies',
-	templateUrl: './technologies.component.html',
-	styleUrls: ['./technologies.component.css']
+    selector: 'app-technologies',
+    templateUrl: './technologies.component.html',
+    styleUrls: ['./technologies.component.css'],
+    standalone: false
 })
 export class TechnologiesComponent implements OnInit {
 	title: string = '';
