@@ -11,7 +11,7 @@ Personal portfolio website, live at [www.robjacobo.dev](https://www.robjacobo.de
 | Framework | Angular 22 (NgModule-based, TypeScript 6) |
 | UI components | Custom components, plain modern CSS (design tokens, glassmorphism) |
 | Icons | Inline SVG — UI icons from Lucide (`app-icon` component), tech logos from `simple-icons` |
-| Scroll animations | AOS (CDN) |
+| Scroll animations | AOS (bundled from npm) |
 | Unit tests | Vitest (`@angular/build:unit-test` builder, jsdom) |
 | Linting | ESLint 10 (flat config) + typescript-eslint |
 | Package manager | pnpm |
@@ -63,7 +63,7 @@ src/
 │   └── app-routing.module.ts  # routes: /home, /experience, fallback → /home
 ├── objects.ts                 # site content: technologies list, company history
 ├── styles.css                 # design tokens, reset, global section styles
-└── index.html                 # CDN links (AOS, fonts) + AOS init
+└── index.html                 # meta/OpenGraph tags (no external resources)
 ```
 
 ## How it works
@@ -96,6 +96,12 @@ Blog posts are entries in the `writing.posts` array (title, summary, date, exter
 - **Glassmorphism identity**: translucent panels with `backdrop-filter: blur()`; floating controls (drawer, menu button) use stronger blur and deeper shadows than in-flow cards.
 - **Mobile-first care**: full-screen sections use `min-height: 100dvh` (correct on phones with dynamic URL bars), fluid sizes via `clamp()`/`vw`, and the drawer caps at `85vw` on narrow screens.
 - **Motion**: AOS handles scroll reveals (`data-aos` attributes); component transitions are explicit and disabled under `prefers-reduced-motion`.
+
+### Performance
+
+- **Zoneless change detection** — no `zone.js` in the production bundle (`provideZonelessChangeDetection`).
+- **Lazy routes** — `/experience` and `/writing` load on demand; the initial bundle carries only the home page (~88 KB transferred).
+- **Zero external requests** — AOS is bundled, fonts are system-ui, backgrounds are CSS gradients. Everything ships from the site's own origin.
 
 ### Tests
 

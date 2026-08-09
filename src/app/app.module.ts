@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ExperienceModule } from './experience/experience.module';
-import { WritingModule } from './writing/writing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // Components
 import { AppComponent } from './app.component';
@@ -16,10 +13,7 @@ import { AppComponent } from './app.component';
 		BrowserModule,
 		AppRoutingModule,
 		HomeModule,
-		SharedModule,
-		BrowserAnimationsModule,
-		ExperienceModule,
-		WritingModule
+		SharedModule
 	],
 	providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
 	bootstrap: [AppComponent],

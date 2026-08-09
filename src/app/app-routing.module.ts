@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/pages/home/home.component';
-import { ExperiencePageComponent } from './experience/pages/experience-page/experience-page.component';
-import { WritingPageComponent } from './writing/pages/writing-page/writing-page.component';
 
 const routes: Routes = [
 	{
@@ -11,11 +9,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'experience',
-		component: ExperiencePageComponent
+		loadChildren: () => import('./experience/experience.module').then(m => m.ExperienceModule)
 	},
 	{
 		path: 'writing',
-		component: WritingPageComponent
+		loadChildren: () => import('./writing/writing.module').then(m => m.WritingModule)
 	},
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: '**', redirectTo: '/home' },

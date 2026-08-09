@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { ExperiencePageComponent } from './pages/experience-page/experience-page.component';
@@ -18,7 +19,8 @@ import { CompaniesComponent } from './components/companies/companies.component';
 	],
 	imports: [
 		CommonModule,
-		SharedModule
-	], 
+		SharedModule,
+		RouterModule.forChild([{ path: '', component: ExperiencePageComponent }])
+	],
 })
 export class ExperienceModule { }
