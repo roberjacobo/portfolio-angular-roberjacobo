@@ -1,74 +1,126 @@
-/* Estilos básicos del contenedor y posicionamiento */
+/* Composition: CENTER — the rhythm break after the left-weighted hero */
 .about-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-image: url("src/assets/images/about.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  background-image:
+    radial-gradient(46rem 30rem at 72% 18%, var(--aurora-teal), transparent 68%),
+    radial-gradient(40rem 28rem at 25% 85%, rgba(255, 255, 255, 0.04), transparent 70%),
+    var(--bg-grid);
+  background-size: auto, auto, var(--bg-grid-size);
+  background-color: var(--background-secondary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-inline: var(--page-inline);
+  padding-block: var(--space-2xl);
 }
 
 .content-container {
   display: flex;
-  flex-direction: row;
-  width: 90%;
+  justify-content: center;
+  width: 100%;
 }
 
-.image-container {
-  width: 50%;
+/* Editorial glass panel: heading column + reading column */
+.about-panel {
+  display: grid;
+  grid-template-columns: minmax(9rem, 13rem) 1fr;
+  gap: var(--space-xl);
+  width: min(100%, 58rem);
+  padding: clamp(var(--space-lg), 4vw, var(--space-2xl));
+  color: var(--color-text);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
-.text-container {
+.about-heading .section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+}
+
+.about-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  color: black;
-  font-size: 1.5vw;
+  gap: var(--space-lg);
+  min-width: 0;
 }
 
-h2 {
-  font-size: 2vw;
+.about-lead {
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem);
+  line-height: 1.6;
+  text-align: left;
 }
 
-.line {
-  width: 50%;
-  border: 0;
-  height: 2px;
-  text-align: center;
-  background-image: linear-gradient(to right, #fff, #000, #fff);
+.about-text {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
+  color: rgba(245, 245, 245, 0.72);
+  text-align: left;
+}
+
+.about-thesis {
+  margin: 0;
+  padding: var(--space-xs) 0 var(--space-xs) var(--space-lg);
+  border-left: 2px solid var(--color-accent);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.6;
+  color: rgba(245, 245, 245, 0.92);
+  text-align: left;
+}
+
+/* Beyond the code — the compact human strip */
+.beyond {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.beyond-label {
+  margin: 0 0 var(--space-md);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.5);
+  text-align: left;
+}
+
+.beyond-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.beyond-chip {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  color: rgba(245, 245, 245, 0.85);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  transition: border-color var(--transition-med), color var(--transition-med);
+}
+
+.beyond-chip:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 @media (max-width: 850px) {
+  /* Extra bottom room so the floating menu button never covers the chips */
   .about-container {
-    flex-direction: column;
-    justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
+    padding-bottom: 6.5rem;
   }
 
-  .content-container {
-    flex-direction: column;
-    align-items: center; /* Centra los hijos horizontalmente */
-  }
-
-  .image-container, .text-container {
-    width: 100%; /* Hace que ocupen todo el ancho disponible */
-    /* Añade un poco de margen entre los contenedores para dispositivos móviles */
-    margin-bottom: 20px; 
-  }
-
-  .text-container {
-    font-size: 4vw; /* Ajusta el tamaño de fuente para mejor legibilidad en dispositivos más pequeños */
-  }
-
-  h2 {
-    font-size: 5vw; /* Ajusta el tamaño del título para dispositivos más pequeños */
-  }
-
-  .line {
-    width: 80%; /* Ajusta el ancho de las líneas para dispositivos más pequeños */
+  .about-panel {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 }

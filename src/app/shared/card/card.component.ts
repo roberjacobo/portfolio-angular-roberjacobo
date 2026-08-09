@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CompaniesInfo } from 'src/app/models/interfaces';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CompaniesInfo } from '../../models/interfaces';
 
 @Component({
-    selector: 'shared-card',
-    templateUrl: './card.component.html',
-    styleUrls: ['./card.component.css'],
-    standalone: false
+	selector: 'shared-card',
+	templateUrl: './card.component.html',
+	styleUrls: ['./card.component.css'],
+	changeDetection: ChangeDetectionStrategy.Eager,
+	standalone: false
 })
 export class CardComponent implements OnInit {
   @Input() company!: CompaniesInfo;

@@ -1,51 +1,121 @@
+/* Composition: content LEFT, ambient light RIGHT */
 .hero {
+  position: relative;
   align-items: center;
-  background-image: url("src/assets/images/home.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: var(--bg-grid);
+  background-size: var(--bg-grid-size);
+  background-color: var(--background);
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  height: 100vh;
-  min-height: 100vh; /* Fallback para navegadores que no soportan variables CSS */
-  min-height: calc(var(--vh, 1vh) * 100);
+  justify-content: flex-start;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-inline: var(--page-inline);
   color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+}
+
+/* Ambient lights on their own layer so they can drift slowly */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  background:
+    radial-gradient(50rem 36rem at 78% 32%, var(--aurora-teal), transparent 60%),
+    radial-gradient(44rem 32rem at 22% 85%, var(--aurora-violet), transparent 62%);
+  animation: heroAmbient 24s ease-in-out infinite alternate;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .blur {
-  background: rgba(4, 4, 4, 0.23);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12.3px);
-  -webkit-backdrop-filter: blur(12.3px);
-  border: 1px solid rgba(4, 4, 4, 0.03);
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
   height: auto;
-  width: 95vw;
-  border-radius: 5px;
-  animation: floatAnimation 3s infinite alternate;
+  width: min(100%, 46rem);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-xl) var(--space-xl) 0;
+  animation: floatAnimation 6s ease-in-out infinite alternate;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .title__container {
-  padding: 0 0 0 3%;
+  padding: 0 0 0 var(--space-xl);
 }
 
 .title {
-  font-size: 12vw;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   margin: 0;
+  text-align: left;
+  line-height: 1.05;
 }
 
 .role__container {
-  padding: 0 0 0 3%;
+  padding: 0 0 0 var(--space-xl);
 }
 
 .role {
-  font-size: 5vw;
-  margin: 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  margin: var(--space-sm) 0 0;
+  color: rgba(245, 245, 245, 0.85);
+  text-align: left;
+}
+
+.tagline {
+  margin: var(--space-xs) 0 0;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-left: var(--space-xl);
+}
+
+.contact-icon,
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  color: rgba(245, 245, 245, 0.75);
+  text-decoration: none;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.contact-email {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+.contact-icon:hover,
+.contact-email:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: rgba(45, 212, 191, 0.06);
+}
+
+.contact-icon:focus-visible,
+.contact-email:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 @keyframes floatAnimation {
@@ -54,5 +124,41 @@
   }
   100% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes heroAmbient {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-3%, 2%, 0);
+  }
+}
+
+@media (max-width: 750px) {
+  .hero {
+    justify-content: center;
+  }
+
+  .blur {
+    width: 100%;
+    padding: var(--space-lg) var(--space-lg) var(--space-lg) 0;
+  }
+
+  .title__container,
+  .role__container {
+    padding-left: var(--space-lg);
+  }
+
+  .contact-row {
+    flex-wrap: wrap;
+    padding-left: var(--space-lg);
+  }
+
+  .contact-email span {
+    max-width: 55vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

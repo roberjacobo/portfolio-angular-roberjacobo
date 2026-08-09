@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 // Components
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
-import { HobbiesComponent } from './components/hobbies/hobbies.component';
-import { PrimengModule } from '../primeng/primeng-module/primeng.module';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
@@ -12,9 +11,8 @@ import { HomeComponent } from './pages/home/home.component';
 		HomeComponent,
 		HeroComponent,
 		AboutComponent,
-		HobbiesComponent,
 	],
 	exports: [],
-	imports: [CommonModule, PrimengModule],
+	imports: [CommonModule, SharedModule],
 })
 export class HomeModule {}

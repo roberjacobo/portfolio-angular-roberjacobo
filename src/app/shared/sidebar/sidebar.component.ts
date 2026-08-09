@@ -1,16 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-import { Renderer2 } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, HostListener, Renderer2 } from '@angular/core';
+import { NavItem } from '../../models/interfaces';
 
 @Component({
-    selector: 'shared-sidebar',
-    templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+	selector: 'shared-sidebar',
+	templateUrl: './sidebar.component.html',
+	styleUrls: ['./sidebar.component.css'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: false
 })
 export class SidebarComponent implements OnInit, OnDestroy {
-	items: MenuItem[] = [];
+	items: NavItem[] = [];
 	sidebarVisible: boolean = false;
 
 	constructor(private renderer: Renderer2) { }
@@ -19,24 +18,24 @@ export class SidebarComponent implements OnInit, OnDestroy {
 		this.items = [
 			{
 				label: 'Home',
-				icon: 'pi pi-fw pi-home',
+				icon: 'home',
 				expanded: false,
 				items: [
 					{
 						label: 'Welcome',
-						icon: 'pi pi-briefcase',
+						icon: 'briefcase',
 						routerLink: '/home',
 						fragment: 'home'
 					},
 					{
 						label: 'About',
-						icon: 'pi pi-user',
+						icon: 'user',
 						routerLink: '/home',
 						fragment: 'about'
 					},
 					{
 						label: 'Hobbies',
-						icon: 'pi pi-ticket',
+						icon: 'ticket',
 						routerLink: '/home',
 						fragment: 'hobbies'
 					}
@@ -44,38 +43,47 @@ export class SidebarComponent implements OnInit, OnDestroy {
 			},
 			{
 				label: 'Experience',
-				icon: 'pi pi-fw pi-briefcase',
+				icon: 'briefcase',
 				expanded: false,
 				items: [
 					{
 						label: 'Technologies',
-						icon: 'pi pi-fw pi-code',
+						icon: 'code',
 						routerLink: '/experience',
 						fragment: 'technologies'
 					},
 					{
 						label: 'Companies',
-						icon: 'pi pi-fw pi-building',
+						icon: 'building',
 						routerLink: '/experience',
 						fragment: 'companies'
 					},
 				],
 			},
 			{
+				label: 'Writing',
+				icon: 'pen',
+				routerLink: '/writing',
+			},
+			{
 				label: 'Work Networks',
-				icon: 'pi pi-external-link',
-				routerLink: '/networks',
+				icon: 'external-link',
 				expanded: false,
 				items: [
 					{
 						label: 'Github',
-						icon: 'pi pi-fw pi-github',
+						icon: 'github',
 						externalLink: 'https://github.com/roberjacobo',
 					},
 					{
 						label: 'LinkedIn',
-						icon: 'pi pi-linkedin',
+						icon: 'linkedin',
 						externalLink: 'https://www.linkedin.com/in/roberto-jacobo/'
+					},
+					{
+						label: 'Email',
+						icon: 'mail',
+						externalLink: 'mailto:robjacobox@gmail.com'
 					}
 				],
 			},
@@ -86,33 +94,24 @@ export class SidebarComponent implements OnInit, OnDestroy {
 		this.sidebarVisible = !this.sidebarVisible;
 		if (this.sidebarVisible) {
 			this.renderer.setStyle(document.body, 'overflow', 'hidden');
-			window.addEventListener('wheel', this.disableScroll, { passive: false });
 		} else {
 			this.renderer.removeStyle(document.body, 'overflow');
-			window.removeEventListener('wheel', this.disableScroll);
 		}
 	}
-
-	disableScroll = (event: WheelEvent) => {
-		if (this.sidebarVisible) {
-			event.preventDefault();
-		}
-	};
 
 	onSidebarHide() {
 		this.renderer.removeStyle(document.body, 'overflow');
-		window.removeEventListener('wheel', this.disableScroll);
 		this.sidebarVisible = false;
 	}
 
-	ngOnDestroy() {
-		window.removeEventListener('wheel', this.disableScroll);
+	@HostListener('document:keydown.escape')
+	onEscape() {
+		if (this.sidebarVisible) {
+			this.onSidebarHide();
+		}
 	}
 
-	// Ajuste de trackByFn para tipos explícitos
-	trackByFn(index: number, item: MenuItem): string {
-		// Asume que cada item tiene una propiedad 'label' que es única
-		// Si tienes un identificador único, úsalo aquí en su lugar
-		return item.label ?? 'defaultLabel'; // Asegúrate de que 'label' es único entre todos tus items
+	ngOnDestroy() {
+		this.renderer.removeStyle(document.body, 'overflow');
 	}
 }

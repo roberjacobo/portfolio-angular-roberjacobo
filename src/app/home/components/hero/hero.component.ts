@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { hero, contact } from '../../../../objects';
 
 @Component({
-    selector: 'home-hero',
-    templateUrl: './hero.component.html',
-    styleUrls: ['./hero.component.css'],
-    standalone: false
+	selector: 'home-hero',
+	templateUrl: './hero.component.html',
+	styleUrls: ['./hero.component.css'],
+	changeDetection: ChangeDetectionStrategy.Eager,
+	standalone: false
 })
 export class HeroComponent {
-	heroItems: string[] = ['Roberto Jacobo', 'Fullstack Developer'];
+	hero = hero;
+	contact = contact;
 }

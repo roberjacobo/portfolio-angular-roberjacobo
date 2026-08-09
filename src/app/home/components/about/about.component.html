@@ -1,14 +1,23 @@
 <section class="about-container">
   <div class="content-container" data-aos="zoom-out-up">
-    <div class="image-container">
-    </div>
-    <div class="text-container">
-      <hr class="line">
-      <h2>{{ title }}</h2>
-      <p>
-        {{ content }}
-      </p>
-      <hr class="line">
+    <div class="about-panel">
+      <div class="about-heading">
+        <p class="section-eyebrow">{{ about.eyebrow }}</p>
+        <h2 class="section-title">{{ about.title }}</h2>
+      </div>
+      <div class="about-body">
+        <p class="about-lead">{{ about.lead }}</p>
+        <p class="about-text">{{ about.body }}</p>
+        <blockquote class="about-thesis">{{ about.thesis }}</blockquote>
+        <div class="beyond" id="hobbies">
+          <p class="beyond-label">{{ about.beyond.label }}</p>
+          <ul class="beyond-chips">
+            @for (item of about.beyond.items; track item) {
+              <li class="beyond-chip">{{ item }}</li>
+            }
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>

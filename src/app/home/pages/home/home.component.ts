@@ -1,18 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ScrollService } from 'src/app/services/scroll.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: false
 })
-export class HomeComponent implements OnInit {
-
-	constructor(private route: ActivatedRoute, private scrollService: ScrollService) { }
-
-	ngOnInit(): void {
-		this.scrollService.handleFragmentChange(this.route);
-	}
-}
+export class HomeComponent {}

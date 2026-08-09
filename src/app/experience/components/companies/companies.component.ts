@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { companies } from 'src/objects';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { companies } from '../../../../objects';
 @Component({
-    selector: 'app-companies',
-    templateUrl: './companies.component.html',
-    styleUrls: ['./companies.component.css'],
-    standalone: false
+	selector: 'app-companies',
+	templateUrl: './companies.component.html',
+	styleUrls: ['./companies.component.css'],
+	changeDetection: ChangeDetectionStrategy.Eager,
+	standalone: false
 })
-export class CompaniesComponent implements OnInit {
-	companiesList = companies.companies; // Renombrado para claridad
-
-	constructor() { }
-
-	ngOnInit(): void {
-	}
+export class CompaniesComponent {
+	title = companies.title;
+	// Current role first: the list is stored chronologically, shown newest-first
+	companiesList = [...companies.companies].reverse();
 }

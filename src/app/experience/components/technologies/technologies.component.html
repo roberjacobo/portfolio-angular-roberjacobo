@@ -1,12 +1,34 @@
 <section class="technologies-container">
   <div class="logos-container" data-aos="fade-down"
-  data-aos-easing="linear"
-  data-aos-duration="1000">
-    <div class="title">{{ title }}</div>
-    <div class="content">
-      <div class="single-logo-container" *ngFor="let logo of logos">
-        <img [src]="logo.logoUrl" [alt]="logo.name" />
-      </div>
+    data-aos-easing="linear"
+    data-aos-duration="1000">
+    <div class="section-heading">
+      <p class="section-eyebrow">Experience</p>
+      <h2 class="section-title">{{ title }}</h2>
+    </div>
+    <ul class="content">
+      @for (logo of logos; track logo.name) {
+        <li class="single-logo-container" [style.--brand]="'#' + logo.hex">
+          @if (logo.imageUrl) {
+            <span class="logo-image" role="img" [attr.aria-label]="logo.name"
+              [style.--logo-mask]="'url(' + logo.imageUrl + ')'"></span>
+          } @else {
+            <svg viewBox="0 0 24 24" role="img" [attr.aria-label]="logo.name">
+              <path [attr.d]="logo.path" [attr.fill-rule]="logo.evenOdd ? 'evenodd' : null" />
+            </svg>
+          }
+          <span class="logo-name">{{ logo.name }}</span>
+        </li>
+      }
+    </ul>
+
+    <div class="disciplines">
+      <h3 class="disciplines-title">{{ disciplinesTitle }}</h3>
+      <ul class="discipline-list">
+        @for (discipline of disciplines; track discipline) {
+          <li class="discipline-chip">{{ discipline }}</li>
+        }
+      </ul>
     </div>
   </div>
 </section>

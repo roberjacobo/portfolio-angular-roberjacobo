@@ -1,77 +1,162 @@
+/* Composition: FULL WIDTH — the glass band breaks the content container */
 .technologies-container {
   align-items: center;
-  background-image: url("src/assets/images/technologies_.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image:
+    radial-gradient(54rem 36rem at 82% 22%, var(--aurora-cyan), transparent 65%),
+    radial-gradient(48rem 34rem at 16% 82%, var(--aurora-teal), transparent 65%),
+    var(--bg-grid);
+  background-size: auto, auto, var(--bg-grid-size);
+  background-color: var(--background);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  height: 100vh;
-  min-height: 100vh; /* Fallback para navegadores que no soportan variables CSS */
-  min-height: calc(var(--vh, 1vh) * 100);
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-block: var(--space-2xl);
   color: rgba(255, 255, 255, 1);
-  overflow: hidden;
 }
 
-.technologies-container .title {
-  margin-top: 1rem;
-  font-size: clamp(16px, 4vw, 50px);
+.section-heading {
+  align-self: flex-start;
+  margin-bottom: var(--space-xl);
 }
-
 
 .logos-container {
-    /* Estilos para elementos con un efecto de desenfoque */
     color: whitesmoke;
-    background: rgba(115, 115, 115, 0.23);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(12.3px);
-    -webkit-backdrop-filter: blur(12.3px);
-    border: 1px solid rgba(4, 4, 4, 0.03);
-    height: 90vh;
-    max-height: 1000px;
-    width: 70vw;
-    min-width: 350px;
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-block: 1px solid var(--glass-border);
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3%;
+    padding: var(--space-2xl) var(--page-inline);
     overflow: hidden;
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
-
-  /* Para asegurarse de que el contenido también se centre cuando no ocupe todo el espacio vertical */
-  height: 100%;
+  display: grid;
+  /* Capped width keeps the logos in balanced rows instead of one long line */
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--space-xl) var(--space-lg);
+  width: 100%;
+  max-width: 46rem;
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
 
 .single-logo-container {
-  min-width: 70px;
-  width: 10vw;
-  height: 10vh;
-  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  /* Monochrome by default; each item carries its brand color for hover */
+  color: rgba(245, 245, 245, 0.72);
+  transition: color var(--transition-med), transform var(--transition-med);
 }
 
-img {
-  z-index: 9999;
-  aspect-ratio: 3/2;
-  height: 100%;
-  object-fit: contain;
+.single-logo-container:hover {
+  color: var(--brand);
+  transform: translateY(-4px);
+}
+
+.single-logo-container svg,
+.single-logo-container .logo-image {
+  width: clamp(2.5rem, 4vw, 3.25rem);
+  height: clamp(2.5rem, 4vw, 3.25rem);
+}
+
+.single-logo-container svg {
+  fill: currentColor;
+}
+
+/* Image logos are painted through their alpha channel as a mask, so they
+   inherit currentColor exactly like the inline SVG icons do. */
+.logo-image {
+  display: block;
+  background-color: currentColor;
+  -webkit-mask: var(--logo-mask) center / contain no-repeat;
+  mask: var(--logo-mask) center / contain no-repeat;
+}
+
+.logo-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: rgba(245, 245, 245, 0.55);
+  text-align: center;
+  transition: color var(--transition-med);
+}
+
+.single-logo-container:hover .logo-name {
+  color: rgba(245, 245, 245, 0.9);
+}
+
+/* Disciplines: practice areas that have no brand logo */
+.disciplines {
   width: 100%;
+  max-width: 46rem;
+  align-self: flex-start;
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-border);
 }
 
-.logo {
-  width: 100px;
-  height: auto; 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 10px;
+.disciplines-title {
+  margin: 0 0 var(--space-md);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.5);
+}
+
+.discipline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.discipline-chip {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  color: rgba(245, 245, 245, 0.85);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  transition: border-color var(--transition-med), color var(--transition-med);
+}
+
+.discipline-chip:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Denser grid on phones so the list stays scannable */
+@media (max-width: 750px) {
+  /* Extra bottom room so the floating menu button never covers the chips */
+  .technologies-container {
+    padding-bottom: 6.5rem;
+  }
+
+  .content {
+    grid-template-columns: repeat(auto-fit, minmax(5.25rem, 1fr));
+    gap: var(--space-lg) var(--space-md);
+  }
+
+  .single-logo-container svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .logo-name {
+    font-size: 0.68rem;
+  }
 }

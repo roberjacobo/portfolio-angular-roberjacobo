@@ -1,26 +1,52 @@
+/* Composition: FULL WIDTH carousel with a left-aligned header */
 .companies-container {
-  align-items: center;
-  background-image: url("src/assets/images/companies.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image:
+    radial-gradient(52rem 36rem at 78% 80%, var(--aurora-blue), transparent 65%),
+    radial-gradient(46rem 32rem at 18% 20%, var(--aurora-teal), transparent 65%),
+    var(--bg-grid);
+  background-size: auto, auto, var(--bg-grid-size);
+  background-color: var(--background-secondary);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 100vh;
-  min-height: 100vh; /* Fallback para navegadores que no soportan variables CSS */
-  min-height: calc(var(--vh, 1vh) * 100);
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-xl);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-block: var(--space-2xl);
   color: rgba(255, 255, 255, 1);
 }
 
+.companies-header {
+  padding-inline: var(--page-inline);
+}
+
 .carousel-container {
+  width: 100%;
   overflow-x: auto;
-  white-space: nowrap;
   padding: 20px 0;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.5rem clamp(1rem, 3vw, 2.5rem);
+  width: max-content;
 }
 
 .carousel-track > shared-card {
-  display: inline-block;
-  white-space: normal;
-  margin: 0 10px;
+  scroll-snap-align: center;
+}
+
+/* On phones, snap firmly and pad the track ends so every card can center */
+@media (max-width: 750px) {
+  .carousel-container {
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-track {
+    padding-inline: calc((100vw - clamp(280px, 78vw, 360px)) / 2);
+  }
 }

@@ -3,11 +3,24 @@
     <div class="blur">
       <div class="title__container">
         <h1 class="title">
-          {{ heroItems[0] }}
+          {{ hero.title }}
         </h1>
       </div>
       <div class="role__container">
-        <p class="role">{{ heroItems[1] }}</p>
+        <p class="role">{{ hero.role }}</p>
+        <p class="tagline">{{ hero.tagline }}</p>
+      </div>
+      <div class="contact-row">
+        <a class="contact-icon" [href]="contact.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <app-icon name="github"></app-icon>
+        </a>
+        <a class="contact-icon" [href]="contact.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <app-icon name="linkedin"></app-icon>
+        </a>
+        <a class="contact-email" [href]="'mailto:' + contact.email">
+          <app-icon name="mail"></app-icon>
+          <span>{{ contact.email }}</span>
+        </a>
       </div>
     </div>
   </div>

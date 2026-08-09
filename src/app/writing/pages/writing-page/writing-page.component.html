@@ -1,0 +1,29 @@
+<section class="writing-container" id="writing">
+  <div class="writing-content" data-aos="fade-up">
+    <p class="section-eyebrow">Blog</p>
+    <h2 class="section-title">{{ title }}</h2>
+    <p class="writing-intro">{{ intro }}</p>
+    <ul class="post-list">
+      @for (post of posts; track post.url) {
+        <li>
+          <a class="post-card" [href]="post.url" target="_blank" rel="noopener noreferrer">
+            <div class="post-meta">
+              <span>{{ post.source }}</span>
+              <span aria-hidden="true">·</span>
+              <span>{{ post.date }}</span>
+              @if (post.readingTime) {
+                <span aria-hidden="true">·</span>
+                <span>{{ post.readingTime }}</span>
+              }
+            </div>
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p class="post-summary">{{ post.summary }}</p>
+            <span class="post-read">
+              Read on {{ post.source }} <app-icon name="external-link"></app-icon>
+            </span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

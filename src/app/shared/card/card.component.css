@@ -1,74 +1,53 @@
-/* Estilos por defecto */
-.card-custom {
-	width: 360px;
-	/* Tamaño predeterminado */
-}
-
-::ng-deep .card {
-	background-color: transparent;
-}
-
-::ng-deep .p-card {
+.company-card {
+	display: flex;
+	flex-direction: column;
+	width: clamp(280px, 78vw, 360px);
+	overflow: hidden;
 	color: whitesmoke;
-	background: rgba(4, 4, 4, 0.23) !important;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(12.3px);
-	-webkit-backdrop-filter: blur(12.3px);
-	border: 1px solid rgba(4, 4, 4, 0.03);
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--glass-shadow);
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	transition: transform var(--transition-med), box-shadow var(--transition-med);
 }
 
-:host ::ng-deep .p-card .p-card-title {
+.company-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--depth-3);
+}
+
+.card-image {
+	width: 100%;
+	height: clamp(96px, 18vw, 136px);
+	object-fit: contain;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	padding: 1rem 1.15rem 1.25rem;
+}
+
+.card-title {
+	margin: 0;
+	font-size: clamp(1.1rem, 2.5vw, 1.5rem);
 	text-align: left;
-	font-size: 1.5rem;
 }
 
-:host ::ng-deep .p-card .p-card-subtitle {
-	font-size: 1rem;
-	margin-bottom: 0;
+.card-subtitle {
+	margin: 0;
+	font-size: clamp(0.85rem, 2vw, 1rem);
+	color: rgba(245, 245, 245, 0.75);
+	text-align: left;
 }
 
-:host ::ng-deep .p-card-content {
-	padding: 10px;
-}
-
-:host ::ng-deep .card-custom .card-description {
-	font-size: 12px !important;
-	/* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
-}
-
-/* Estilos para pantallas más pequeñas */
-@media only screen and (max-width: 600px) {
-	:host ::ng-deep .card-custom {
-		width: 100% !important;
-		/* Toma el ancho completo en pantallas pequeñas */
-		max-width: 300px !important;
-		/* Máximo ancho para pantallas pequeñas */
-		min-height: 200px !important;
-		/* Altura ajustada para pantallas pequeñas */
-	}
-
-	:host ::ng-deep .card-custom .card-image {
-		max-width: 100% !important;
-		/* Hace que las imágenes sean responsivas */
-		height: auto !important;
-		/* Mantiene la relación de aspecto */
-	}
-
-	:host ::ng-deep .p-card .p-card-title {
-		font-size: 1rem;
-	}
-
-	:host ::ng-deep .p-card .p-card-subtitle {
-		font-size: 0.8rem;
-		margin-bottom: 0;
-	}
-
-	:host ::ng-deep .p-card-content {
-		padding: 0;
-	}
-
-	:host ::ng-deep .card-custom .card-description {
-		font-size: 10px !important;
-		/* Ajusta el tamaño de la fuente para el contenido de la tarjeta */
-	}
+.card-description {
+	margin: 0.5rem 0 0;
+	font-size: clamp(0.72rem, 1.8vw, 0.78rem);
+	line-height: 1.55;
 }

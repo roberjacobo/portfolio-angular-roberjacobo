@@ -1,7 +1,13 @@
 <section class="companies-container">
+  <header class="companies-header" data-aos="fade-right">
+    <p class="section-eyebrow">Experience</p>
+    <h2 class="section-title">{{ title }}</h2>
+  </header>
   <div class="carousel-container">
     <div class="carousel-track">
-      <shared-card *ngFor="let company of companiesList" [company]="company"></shared-card>
+      @for (company of companiesList; track company) {
+        <shared-card [company]="company"></shared-card>
+      }
     </div>
   </div>
 </section>
